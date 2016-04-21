@@ -24,7 +24,6 @@
   "keywords": [
     "cli-app",
     "cli",
-    ""
   ],
   "dependencies": {
     "gh-got": "^4.0.0",

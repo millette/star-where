@@ -28,9 +28,9 @@ const ghGot = require('gh-got')
 const flatten = require('lodash.flatten')
 const githubToProjects = require('librarian-api').github.projects
 
-
-module.exports = function (username) {
-  return ghGot(['users', username, 'starred'].join('/') + '?per_page=100')
+module.exports = function (username, per_page) {
+  if (!per_page) { per_page = 10 }
+  return ghGot(['users', username, 'starred'].join('/') + '?per_page=' + per_page)
     .then((repos) => Promise.all(repos.body
       .map((repo) => repo.full_name.split('/'))
       .map((f) => githubToProjects(f[0], f[1]))
