@@ -18,19 +18,19 @@ You should have received a copy of the
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+// https://libraries.io/account
+// export LIBRARIES_IO_TOKEN=d8de9f...
+
 'use strict'
 
 // npm
 const ghGot = require('gh-got')
-const sortBy = require('lodash.sortby')
 const flatten = require('lodash.flatten')
 const githubToProjects = require('librarian-api').github.projects
 
-// https://libraries.io/account
-// export LIBRARIES_IO_TOKEN=d8de9f...
 
 module.exports = function (username) {
-  return ghGot(['users', username, 'starred'].join('/') + '?per_page=8')
+  return ghGot(['users', username, 'starred'].join('/') + '?per_page=100')
     .then((repos) => Promise.all(repos.body
       .map((repo) => repo.full_name.split('/'))
       .map((f) => githubToProjects(f[0], f[1]))
@@ -40,5 +40,4 @@ module.exports = function (username) {
       }))
     ))
     .then((libs) => flatten(libs))
-    .then((libs) => sortBy(libs, ['name', 'platform']))
 }

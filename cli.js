@@ -20,6 +20,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 'use strict'
+
+// npm
+const pick = require('lodash.pick')
+const pickBy = require('lodash.pickby')
+const sortBy = require('lodash.sortby')
+/*
 const meow = require('meow')
 const daylies = require('./')
 
@@ -39,5 +45,20 @@ const cli = meow([
 
 daylies(cli.input[0] || 'millette')
   .then((libs) => {
-    console.log(libs)
+    console.log(JSON.stringify(libs, null, '  '))
   })
+*/
+
+const data = require('./last-100c-millette-stars.json')
+
+const fields = [
+  'name', 'id', 'full_name', 'html_url',
+  'homepage', 'stargazers_count', 'language', 'platform',
+  'forks_count', 'repository_url', 'rank', 'normalized_licenses'
+]
+
+const out = sortBy(
+  data.map((project) => pickBy(pick(project, fields), (v) => v)),
+  (x) => x.html_url || x.repository_url)
+
+console.log(JSON.stringify(out, null, '  '))

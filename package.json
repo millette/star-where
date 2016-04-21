@@ -30,6 +30,8 @@
     "gh-got": "^4.0.0",
     "librarian-api": "^0.0.5",
     "lodash.flatten": "^4.2.0",
+    "lodash.pick": "^4.2.0",
+    "lodash.pickby": "^4.3.0",
     "lodash.sortby": "^4.4.2",
     "meow": "^3.7.0"
   },
