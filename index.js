@@ -30,24 +30,15 @@ const githubToProjects = require('librarian-api').github.projects
 // export LIBRARIES_IO_TOKEN=d8de9f...
 
 module.exports = function (username) {
-  ghGot(['users', username, 'starred'].join('/') + '?per_page=100')
-    .then((repos) => {
-      const projects = repos.body
-        .map((repo) => repo.full_name.split('/'))
-        .map((f) => githubToProjects(f[0], f[1]))
-      return Promise.all(projects.concat(
-        repos.body.map((x) => {
-          x.platform = 'x-GITHUB'
-          return x
-        })
-      ))
-    })
+  return ghGot(['users', username, 'starred'].join('/') + '?per_page=8')
+    .then((repos) => Promise.all(repos.body
+      .map((repo) => repo.full_name.split('/'))
+      .map((f) => githubToProjects(f[0], f[1]))
+      .concat(repos.body.map((x) => {
+        x.platform = 'x-GITHUB'
+        return x
+      }))
+    ))
     .then((libs) => flatten(libs))
     .then((libs) => sortBy(libs, ['name', 'platform']))
-    .then((libs) => {
-      console.log(libs)
-    })
-    .catch((e) => {
-      console.log('euh...', e)
-    })
 }

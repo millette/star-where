@@ -37,5 +37,7 @@ const cli = meow([
   '  ponies & rainbows'
 ])
 
-daylies('millette')
-//console.log(daylies(cli.input[0] || 'millette'))
+daylies(cli.input[0] || 'millette')
+  .then((libs) => {
+    console.log(libs)
+  })
