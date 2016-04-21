@@ -22,6 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // npm
 const ghGot = require('gh-got')
+const sortBy = require('lodash.sortby')
 const flatten = require('lodash.flatten')
 const githubToProjects = require('librarian-api').github.projects
 
@@ -29,14 +30,24 @@ const githubToProjects = require('librarian-api').github.projects
 // export LIBRARIES_IO_TOKEN=d8de9f...
 
 module.exports = function (username) {
-  ghGot(['users', username, 'starred'].join('/') + '?per_page=5')
-    .then((repos) => Promise.all(
-      repos.body
+  ghGot(['users', username, 'starred'].join('/') + '?per_page=100')
+    .then((repos) => {
+      const projects = repos.body
         .map((repo) => repo.full_name.split('/'))
         .map((f) => githubToProjects(f[0], f[1]))
-    ))
+      return Promise.all(projects.concat(
+        repos.body.map((x) => {
+          x.platform = 'x-GITHUB'
+          return x
+        })
+      ))
+    })
     .then((libs) => flatten(libs))
+    .then((libs) => sortBy(libs, ['name', 'platform']))
     .then((libs) => {
       console.log(libs)
+    })
+    .catch((e) => {
+      console.log('euh...', e)
     })
 }

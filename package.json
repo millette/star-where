@@ -28,8 +28,9 @@
   ],
   "dependencies": {
     "gh-got": "^4.0.0",
-    "librarian-api": "0.0.3",
+    "librarian-api": "^0.0.5",
     "lodash.flatten": "^4.2.0",
+    "lodash.sortby": "^4.4.2",
     "meow": "^3.7.0"
   },
   "devDependencies": {
