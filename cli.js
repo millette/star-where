@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 /*
 Jours se suivent.
 
@@ -28,21 +29,28 @@ const sortBy = require('lodash.sortby')
 const meow = require('meow')
 const starWhere = require('./')
 
-const cli = meow([
-  'Usage',
-  '  $ star-where [input]',
-  '',
-  'Options',
-  '  --foo  Lorem ipsum. [Default: false]',
-  '',
-  'Examples',
-  '  $ star-where',
-  '  unicorns & rainbows',
-  '  $ star-where ponies',
-  '  ponies & rainbows'
-])
+const numDefault = 10
 
-const bla = function (data) {
+const cli = meow(`
+  Usage
+    $ star-where username
+
+  Options
+    -n
+    --num  Number of stars to fetch. [Default: ${numDefault}]
+
+  Examples
+    $ star-where millette
+    ...
+    $ star-where millette --num 50
+    ...
+`, {
+  alias: { n: 'num' },
+  default: { 'num': numDefault },
+  string: 'num'
+})
+
+const output = function (data) {
   const fields = [
     'name', 'id', 'full_name', 'html_url',
     'homepage', 'stargazers_count', 'language', 'platform',
@@ -56,4 +64,14 @@ const bla = function (data) {
   console.log(JSON.stringify(out, null, '  '))
 }
 
-starWhere(cli.input[0] || 'millette').then(bla)
+if (cli.input[0] && cli.flags.num) {
+  starWhere(cli.input[0], cli.flags.num).then(output)
+} else {
+  if (!cli.flags.num) {
+    console.log('--num needs a positive integer argument telling how many stars to fetch.')
+  }
+  if (!cli.input[0]) {
+    console.log('star-where needs a Github username argument.')
+  }
+  console.log('See "start-where --help" for more.')
+}
