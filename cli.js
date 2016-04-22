@@ -26,19 +26,19 @@ const pick = require('lodash.pick')
 const pickBy = require('lodash.pickby')
 const sortBy = require('lodash.sortby')
 const meow = require('meow')
-const daylies = require('./')
+const starWhere = require('./')
 
 const cli = meow([
   'Usage',
-  '  $ daylies [input]',
+  '  $ star-where [input]',
   '',
   'Options',
   '  --foo  Lorem ipsum. [Default: false]',
   '',
   'Examples',
-  '  $ daylies',
+  '  $ star-where',
   '  unicorns & rainbows',
-  '  $ daylies ponies',
+  '  $ star-where ponies',
   '  ponies & rainbows'
 ])
 
@@ -56,13 +56,4 @@ const bla = function (data) {
   console.log(JSON.stringify(out, null, '  '))
 }
 
-daylies(cli.input[0] || 'millette')
-  .then(bla)
-/*
-  .then((libs) => {
-    // console.log(JSON.stringify(libs, null, '  '))
-    bla(libs)
-  })
-*/
-// const data = require('./last-100c-millette-stars.json')
-// bla(data)
+starWhere(cli.input[0] || 'millette').then(bla)

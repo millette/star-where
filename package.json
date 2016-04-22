@@ -1,9 +1,9 @@
 {
-  "name": "daylies",
+  "name": "star-where",
   "version": "0.0.1",
   "description": "Jours se suivent.",
   "license": "AGPL-3.0",
-  "repository": "millette/daylies",
+  "repository": "millette/star-where",
   "author": {
     "name": "Robin Millette",
     "email": "robin@millette.info",
