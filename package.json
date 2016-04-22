@@ -23,7 +23,7 @@
   ],
   "keywords": [
     "cli-app",
-    "cli",
+    "cli"
   ],
   "dependencies": {
     "gh-got": "^4.0.0",

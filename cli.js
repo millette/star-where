@@ -25,7 +25,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 const pick = require('lodash.pick')
 const pickBy = require('lodash.pickby')
 const sortBy = require('lodash.sortby')
-/*
 const meow = require('meow')
 const daylies = require('./')
 
@@ -43,22 +42,27 @@ const cli = meow([
   '  ponies & rainbows'
 ])
 
+const bla = function (data) {
+  const fields = [
+    'name', 'id', 'full_name', 'html_url',
+    'homepage', 'stargazers_count', 'language', 'platform',
+    'forks_count', 'repository_url', 'rank', 'normalized_licenses'
+  ]
+
+  const out = sortBy(
+    data.map((project) => pickBy(pick(project, fields), (v) => v)),
+    (x) => x.html_url || x.repository_url)
+
+  console.log(JSON.stringify(out, null, '  '))
+}
+
 daylies(cli.input[0] || 'millette')
+  .then(bla)
+/*
   .then((libs) => {
-    console.log(JSON.stringify(libs, null, '  '))
+    // console.log(JSON.stringify(libs, null, '  '))
+    bla(libs)
   })
 */
-
-const data = require('./last-100c-millette-stars.json')
-
-const fields = [
-  'name', 'id', 'full_name', 'html_url',
-  'homepage', 'stargazers_count', 'language', 'platform',
-  'forks_count', 'repository_url', 'rank', 'normalized_licenses'
-]
-
-const out = sortBy(
-  data.map((project) => pickBy(pick(project, fields), (v) => v)),
-  (x) => x.html_url || x.repository_url)
-
-console.log(JSON.stringify(out, null, '  '))
+// const data = require('./last-100c-millette-stars.json')
+// bla(data)
