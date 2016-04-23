@@ -44,5 +44,5 @@ module.exports = function (username, per_page) {
         return x
       }))
     ))
-    .then((libs) => flatten(libs)).map(addKey)
+    .then((libs) => flatten(libs).map(addKey))
 }
