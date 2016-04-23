@@ -1,21 +1,21 @@
-# daylies [![Build Status](https://travis-ci.org/millette/daylies.svg?branch=master)](https://travis-ci.org/millette/daylies) [![Coverage Status](https://coveralls.io/repos/github/millette/daylies/badge.svg?branch=master)](https://coveralls.io/github/millette/daylies?branch=master)
+# star-where [![Build Status](https://travis-ci.org/millette/star-where.svg?branch=master)](https://travis-ci.org/millette/star-where) [![Coverage Status](https://coveralls.io/repos/github/millette/star-where/badge.svg?branch=master)](https://coveralls.io/github/millette/star-where?branch=master)
 > Jours se suivent.
 
 ## Install
 ```
-$ npm install --save daylies
+$ npm install --save star-where
 ```
 
 ## Usage
 ```js
-const daylies = require('daylies');
+const starWhere = require('star-where');
 
-daylies('unicorns');
+starWhere('unicorns');
 //=> 'unicorns & rainbows'
 ```
 
 ## API
-### daylies(input, [options])
+### starWhere(input, [options])
 #### input
 Type: `string`
 
@@ -30,22 +30,22 @@ Lorem ipsum.
 
 ## CLI
 ```
-$ npm install --global daylies
+$ npm install --global star-where
 ```
 
 ```
-$ daylies --help
+$ star-where --help
 
   Usage
-    daylies [input]
+    star-where [input]
 
   Options
     --foo  Lorem ipsum. [Default: false]
 
   Examples
-    $ daylies
+    $ star-where
     unicorns & rainbows
-    $ daylies ponies
+    $ star-where ponies
     ponies & rainbows
 ```
 
