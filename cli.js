@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-var _eslint_workaround = true // eslint-disable-line no-unused-vars
 // see https://github.com/babel/babel-eslint/issues/163
+var _eslint_workaround = true // eslint-disable-line no-unused-vars
 
 /*
 Jours se suivent.

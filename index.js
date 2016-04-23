@@ -28,6 +28,11 @@ const ghGot = require('gh-got')
 const flatten = require('lodash.flatten')
 const githubToProjects = require('librarian-api').github.projects
 
+const addKey = (v) => {
+  v._key = (v.html_url || v.repository_url).toLowerCase()
+  return v
+}
+
 module.exports = function (username, per_page) {
   if (!per_page) { per_page = 100 }
   return ghGot(['users', username, 'starred'].join('/') + '?per_page=' + per_page)
@@ -39,5 +44,5 @@ module.exports = function (username, per_page) {
         return x
       }))
     ))
-    .then((libs) => flatten(libs))
+    .then((libs) => flatten(libs)).map(addKey)
 }
