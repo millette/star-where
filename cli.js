@@ -54,7 +54,7 @@ const cli = meow(`
 
 const output = function (data) {
   const fields = [
-    'name', 'id', 'full_name', 'html_url',
+    'name', 'id', 'full_name', 'html_url', 'description',
     'homepage', 'stargazers_count', 'language', 'platform',
     'forks_count', 'repository_url', 'rank', 'normalized_licenses'
   ]
