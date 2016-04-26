@@ -66,8 +66,8 @@ const output = function (data) {
   console.log(JSON.stringify(out, null, '  '))
 }
 
-if (cli.input[0] && cli.flags.num) {
-  starWhere(cli.input[0], cli.flags.num).then(output)
+if (cli.input[0] && cli.flags.num && parseInt(cli.flags.num, 10)) {
+  starWhere(cli.input[0], parseInt(cli.flags.num, 10)).then(output)
 } else {
   if (!cli.flags.num) {
     console.log('--num needs a positive integer argument telling how many stars to fetch.')
