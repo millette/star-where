@@ -75,5 +75,5 @@ if (cli.input[0] && cli.flags.num && parseInt(cli.flags.num, 10)) {
   if (!cli.input[0]) {
     console.log('star-where needs a Github username argument.')
   }
-  console.log('See "start-where --help" for more.')
+  console.log('See "star-where --help" for more.')
 }
