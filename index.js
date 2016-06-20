@@ -33,9 +33,9 @@ const addKey = (v) => {
   return v
 }
 
-module.exports = function (username, per_page) {
-  if (!per_page) { per_page = 100 }
-  return ghGot(['users', username, 'starred'].join('/') + '?per_page=' + per_page)
+module.exports = function (username, perPage) {
+  if (!perPage) { perPage = 100 }
+  return ghGot(['users', username, 'starred'].join('/') + '?per_page=' + perPage)
     .then((repos) => Promise.all(repos.body
       .map((repo) => repo.full_name.split('/'))
       .map((f) => githubToProjects(f[0], f[1]))
