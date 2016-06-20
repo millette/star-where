@@ -29,17 +29,17 @@
     "gh-got": "^4.0.0",
     "librarian-api": "^0.0.5",
     "lodash.flatten": "^4.2.0",
-    "lodash.pick": "^4.2.0",
-    "lodash.pickby": "^4.3.0",
-    "lodash.sortby": "^4.4.2",
+    "lodash.pick": "^4.2.1",
+    "lodash.pickby": "^4.4.0",
+    "lodash.sortby": "^4.5.0",
     "meow": "^3.7.0"
   },
   "devDependencies": {
     "ava": "^0.12.0",
-    "babel-eslint": "^6.0.0",
+    "babel-eslint": "^6.0.4",
     "coveralls": "^2.11.9",
-    "nyc": "^6.1.1",
-    "standard": "^6.0.8"
+    "nyc": "^6.6.1",
+    "standard": "^7.1.2"
   },
   "standard": {
     "parser": "babel-eslint"
