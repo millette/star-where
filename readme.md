@@ -1,4 +1,8 @@
-# star-where [![Build Status](https://travis-ci.org/millette/star-where.svg?branch=master)](https://travis-ci.org/millette/star-where) [![Coverage Status](https://coveralls.io/repos/github/millette/star-where/badge.svg?branch=master)](https://coveralls.io/github/millette/star-where?branch=master)
+# star-where
+[![Build Status](https://travis-ci.org/millette/star-where.svg?branch=master)](https://travis-ci.org/millette/star-where)
+[![Coverage Status](https://coveralls.io/repos/github/millette/star-where/badge.svg?branch=master)](https://coveralls.io/github/millette/star-where?branch=master)
+[![Dependency Status](https://gemnasium.com/badges/github.com/millette/star-where.svg)](https://gemnasium.com/github.com/millette/star-where)
+
 > Jours se suivent.
 
 ## Install
