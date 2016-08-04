@@ -3,3 +3,4 @@ node_modules
 npm-debug.log
 bof
 day-2.json
+.env
