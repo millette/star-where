@@ -26,20 +26,20 @@
     "cli"
   ],
   "dependencies": {
-    "gh-got": "^4.0.1",
-    "librarian-api": "^0.1.2",
-    "lodash.flatten": "^4.3.0",
-    "lodash.pick": "^4.3.0",
-    "lodash.pickby": "^4.5.1",
-    "lodash.sortby": "^4.6.1",
+    "gh-got": "^5.0.0",
+    "librarian-api": "^0.2.1",
+    "lodash.flatten": "^4.4.0",
+    "lodash.pick": "^4.4.0",
+    "lodash.pickby": "^4.6.0",
+    "lodash.sortby": "^4.7.0",
     "meow": "^3.7.0"
   },
   "devDependencies": {
-    "ava": "^0.15.2",
+    "ava": "^0.16.0",
     "babel-eslint": "^6.1.2",
-    "coveralls": "^2.11.12",
-    "nyc": "^7.1.0",
-    "standard": "^7.1.2"
+    "coveralls": "^2.11.14",
+    "nyc": "^8.3.0",
+    "standard": "^8.1.0"
   },
   "standard": {
     "parser": "babel-eslint"

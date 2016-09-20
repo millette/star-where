@@ -53,6 +53,5 @@ $ star-where --help
     ponies & rainbows
 ```
 
-
 ## License
 AGPL-v3 © [Robin Millette](http://robin.millette.info)
