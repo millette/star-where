@@ -31,6 +31,8 @@ const starWhere = require('./')
 
 const numDefault = 10
 
+var running = true
+
 const cli = meow(`
   Usage
     $ star-where username
@@ -61,11 +63,23 @@ const output = function (data) {
     data.map((project) => pickBy(pick(project, fields), (v) => v)),
     (x) => x.html_url || x.repository_url)
 
+  running = false
   console.log(JSON.stringify(out, null, '  '))
 }
 
+const timer = () => { if (running) { setTimeout(timer, 500) } }
+
+const doneError = (e) => {
+  running = false
+  console.error(e)
+}
+
 if (cli.input[0] && cli.flags.num && parseInt(cli.flags.num, 10)) {
-  starWhere(cli.input[0], parseInt(cli.flags.num, 10)).then(output)
+  running = true
+  timer()
+  starWhere(cli.input[0], parseInt(cli.flags.num, 10))
+    .then(output)
+    .catch(doneError)
 } else {
   if (!cli.flags.num) {
     console.log('--num needs a positive integer argument telling how many stars to fetch.')
