@@ -24,6 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 'use strict'
 
 // npm
+require('dotenv-safe').load()
 const ghGot = require('gh-got')
 const flatten = require('lodash.flatten')
 const githubToProjects = require('librarian-api').github.projects
