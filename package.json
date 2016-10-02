@@ -27,7 +27,7 @@
   ],
   "dependencies": {
     "gh-got": "^5.0.0",
-    "librarian-api": "^0.2.1",
+    "librarian-api": "^0.3.0",
     "lodash.flatten": "^4.4.0",
     "lodash.pick": "^4.4.0",
     "lodash.pickby": "^4.6.0",
