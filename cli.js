@@ -28,6 +28,9 @@ const pickBy = require('lodash.pickby')
 const sortBy = require('lodash.sortby')
 const meow = require('meow')
 const starWhere = require('./')
+const updateNotifier = require('update-notifier')
+
+updateNotifier({ pkg: require('./package.json') }).notify()
 
 const numDefault = 10
 
