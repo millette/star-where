@@ -27,7 +27,7 @@
     "cli"
   ],
   "dependencies": {
-    "dotenv-safe": "^4.0.3",
+    "dotenv-safe": "^6.1.0",
     "gh-got": "^5.0.0",
     "librarian-api": "^0.4.0",
     "lodash.flatten": "^4.4.0",
