@@ -3,7 +3,7 @@
 /*
 Jours se suivent.
 
-Copyright 2016 Robin Millette <robin@millette.info> (<http://robin.millette.info>)
+Copyright 2016-2019 Robin Millette <robin@millette.info> (<http://robin.millette.info>)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published by
