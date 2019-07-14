@@ -35,7 +35,7 @@
     "lodash.pickby": "^4.6.0",
     "lodash.sortby": "^4.7.0",
     "meow": "^5.0.0",
-    "update-notifier": "^2.1.0"
+    "update-notifier": "^3.0.1"
   },
   "devDependencies": {
     "ava": "^0.18.2",
