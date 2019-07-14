@@ -29,7 +29,7 @@
   "dependencies": {
     "dotenv-safe": "^6.1.0",
     "gh-got": "^8.1.0",
-    "librarian-api": "^0.4.0",
+    "librarian-api": "^1.0.0",
     "lodash.flatten": "^4.4.0",
     "lodash.pick": "^4.4.0",
     "lodash.pickby": "^4.6.0",
