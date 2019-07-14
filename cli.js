@@ -51,7 +51,7 @@ const cli = meow(`
     ...
 `, {
   alias: { n: 'num' },
-  default: { 'num': numDefault },
+  default: { num: numDefault },
   string: 'num'
 })
 
