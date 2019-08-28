@@ -50,9 +50,13 @@ const cli = meow(`
     $ star-where millette --num 50
     ...
 `, {
-  alias: { n: 'num' },
-  default: { num: numDefault },
-  string: 'num'
+  flags: {
+    num: {
+      alias: 'n',
+      default: numDefault,
+      type: 'string'
+    }
+  }
 })
 
 const output = function (data) {
