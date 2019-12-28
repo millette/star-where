@@ -81,10 +81,10 @@ const doneError = (e) => {
   console.error(e)
 }
 
-if (cli.input[0] && cli.flags.num && parseInt(cli.flags.num, 10)) {
+if (cli.input[0] && cli.flags.num) {
   running = true
   timer()
-  starWhere(cli.input[0], parseInt(cli.flags.num, 10))
+  starWhere(cli.input[0], cli.flags.num, 10)
     .then(output)
     .catch(doneError)
 } else {
